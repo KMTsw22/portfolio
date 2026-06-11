@@ -1,0 +1,153 @@
+.desktop {
+  height: 100vh;
+  height: 100dvh;
+  padding: 26px;
+  display: flex;
+  justify-content: center;
+}
+
+.window {
+  flex: 1;
+  min-height: 0;
+  max-width: 1060px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(120, 90, 170, 0.25);
+  box-shadow: 0 30px 70px rgba(80, 40, 120, 0.28),
+    0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* title bar */
+.bar {
+  height: 42px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  background: rgba(248, 246, 252, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.lights {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.lights > * {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.5);
+}
+.red {
+  background: #ff5f57;
+  cursor: pointer;
+}
+.yellow {
+  background: #febc2e;
+}
+.green {
+  background: #28c840;
+  cursor: pointer;
+}
+.red::after,
+.green::after {
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+.lights:hover .red::after {
+  content: "\00d7";
+  opacity: 1;
+}
+.lights:hover .green::after {
+  content: "+";
+  opacity: 1;
+}
+
+/* maximize / restore */
+.maxDesktop {
+  padding: 0;
+}
+.maxWindow {
+  max-width: none;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* closed → relaunch on the desktop */
+.relaunch {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(120, 90, 170, 0.25);
+  border-radius: 20px;
+  padding: 26px 34px;
+  cursor: pointer;
+  box-shadow: 0 20px 50px rgba(80, 40, 120, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.relaunch:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 26px 60px rgba(80, 40, 120, 0.32);
+}
+.relaunchIcon {
+  font-size: 30px;
+}
+.relaunchLabel {
+  font-weight: 700;
+  font-size: 15px;
+  color: #3a3050;
+}
+.relaunchHint {
+  font-size: 12px;
+  color: #8a85a0;
+}
+.title {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6a6480;
+  letter-spacing: 0.2px;
+}
+.spacer {
+  width: 60px;
+  flex: 0 0 auto;
+}
+
+.viewport {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+@media (max-width: 640px) {
+  .desktop {
+    padding: 0;
+  }
+  .window {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
+}

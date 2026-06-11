@@ -1,0 +1,70 @@
+.wrap {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    #eef2ff 0%,
+    #f4ecff 42%,
+    #fbe7f4 62%,
+    #ffd9ea 69.4%,
+    #f6f1ff 70.2%,
+    #f1ecfb 100%
+  );
+}
+
+.sun {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -78%);
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ffe9a8 0%, #ffc6a0 55%, #ffb3cf 100%);
+  opacity: 0.7;
+  filter: blur(1px);
+  box-shadow: 0 0 80px 24px rgba(255, 170, 200, 0.45);
+}
+
+.horizon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 70%;
+  height: 2px;
+  background: rgba(255, 140, 190, 0.7);
+  box-shadow: 0 0 16px 3px rgba(255, 150, 200, 0.55);
+}
+
+.grid {
+  position: absolute;
+  left: -50%;
+  right: -50%;
+  bottom: 0;
+  height: 46%;
+  background-image:
+    linear-gradient(rgba(190, 110, 200, 0.28) 1.4px, transparent 1.4px),
+    linear-gradient(90deg, rgba(140, 120, 230, 0.22) 1.4px, transparent 1.4px);
+  background-size: 60px 60px;
+  transform: perspective(340px) rotateX(74deg);
+  transform-origin: bottom center;
+  animation: gridmove 2s linear infinite;
+  mask-image: linear-gradient(180deg, transparent, #000 30%);
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 30%);
+}
+@keyframes gridmove {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 0 60px, 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid {
+    animation: none;
+  }
+}
