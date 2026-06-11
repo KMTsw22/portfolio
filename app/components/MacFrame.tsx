@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 import styles from "./MacFrame.module.css";
 
@@ -10,16 +11,22 @@ export default function MacFrame({ children }: { children: React.ReactNode }) {
 
   if (closed) {
     return (
-      <div className={styles.desktop}>
-        <button
-          className={styles.relaunch}
-          onClick={() => setClosed(false)}
-          aria-label="Reopen portfolio"
-        >
-          <span className={styles.relaunchIcon}>★</span>
-          <span className={styles.relaunchLabel}>Mintae Kim — Portfolio</span>
-          <span className={styles.relaunchHint}>click to reopen</span>
-        </button>
+      <div className={styles.login}>
+        <div className={styles.loginInner}>
+          <span className={styles.loginAvatar}>
+            <Image src="/icons/node.png" alt="" width={110} height={110} />
+          </span>
+          <span className={styles.loginName}>Mintae Kim</span>
+          <button
+            type="button"
+            className={styles.loginBtn}
+            onClick={() => setClosed(false)}
+            aria-label="Log in"
+          >
+            ›
+          </button>
+          <span className={styles.loginHint}>click to log in</span>
+        </div>
       </div>
     );
   }
@@ -45,7 +52,9 @@ export default function MacFrame({ children }: { children: React.ReactNode }) {
               onClick={() => setMaximized((m) => !m)}
             />
           </span>
-          <span className={styles.title}>Mintae Kim — Portfolio</span>
+          <span className={styles.title}>
+            <span className={styles.monogram}>MK</span>
+          </span>
           <span className={styles.barRight}>
             <ThemeToggle />
           </span>

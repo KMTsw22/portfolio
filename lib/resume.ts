@@ -32,11 +32,11 @@ export const PROFILE = {
   email: "mintae3827@gmail.com",
   phone: "949-735-4720",
   tagline:
-    "Software engineer with 2+ years building high-concurrency, distributed server systems in production.",
+    "Server Engineer with 2+ years of production experience on a live MMORPG.",
   links: [
     { label: "GitHub", url: "https://github.com/KMTsw22" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/mintae-kim-377041386" },
-    { label: "Website", url: "https://beacons.ai/mintae818" },
+    { label: "Linktree", url: "https://beacons.ai/mintae818" },
     { label: "Email", url: "mailto:mintae3827@gmail.com" },
   ] as LinkItem[],
 };
@@ -44,9 +44,20 @@ export const PROFILE = {
 export const SKILLS: { group: string; items: string[] }[] = [
   {
     group: "Backend & Servers",
-    items: ["C#", "C++", "Python", "Java", "ProudNet", "FastAPI", "Flask"],
+    items: [
+      "C#",
+      "C++",
+      "Python",
+      "Java",
+      "ProudNet",
+      "FastAPI",
+      "Flask",
+      "MySQL",
+      "PostgreSQL",
+      "Redis",
+      "MongoDB",
+    ],
   },
-  { group: "Database", items: ["MySQL", "PostgreSQL", "Redis", "MongoDB"] },
   {
     group: "Infra & DevOps",
     items: [
@@ -58,8 +69,10 @@ export const SKILLS: { group: string; items: string[] }[] = [
       "Linux",
     ],
   },
-  { group: "Frontend", items: ["React", "Next.js", "TypeScript"] },
-  { group: "Additional", items: ["Unity (C#)", "PyQt", "Selenium"] },
+  {
+    group: "Additional",
+    items: ["Unity (C#)", "React", "Next.js", "TypeScript", "PyQt", "Selenium"],
+  },
 ];
 
 export const EVENTS: TimelineEvent[] = [
@@ -73,12 +86,12 @@ export const EVENTS: TimelineEvent[] = [
     title: "Kookmin University",
     role: "B.S. in Software Engineering",
     logos: [{ src: "/icons/kmu.png", alt: "Kookmin University", w: 64, h: 64 }],
-    summary: ["B.S. Software Engineering", "GPA 4.04 / 4.5"],
+    summary: ["B.S. Software Engineering", "GPA 4.04"],
     detail:
-      "Pursuing a B.S. in Software Engineering at Kookmin University, maintaining a GPA of 4.04 / 4.5.",
+      "Pursuing a B.S. in Software Engineering at Kookmin University, maintaining a GPA of 4.04.",
     bullets: [
       "B.S. in Software Engineering",
-      "GPA 4.04 / 4.5",
+      "GPA 4.04",
       "Expected graduation — Feb 2028",
     ],
     links: [],
@@ -88,14 +101,14 @@ export const EVENTS: TimelineEvent[] = [
     level: 2,
     kind: "experience",
     year: "2022",
-    date: "Jan 2022 – Jan 2024",
+    date: "Jan 2022 – Dec 2023",
     accent: "#e0991f",
     title: "Freelance",
     role: "Automation Software Engineer",
     logos: [{ src: "/icons/kmong.png", alt: "Freelance", w: 96, h: 64 }],
     summary: ["Automation Software Engineer", "20+ paying clients"],
     detail:
-      "Delivered Python/Selenium automation tools and PyQt desktop apps for 20+ paying clients — scheduled data collection, web scraping, and transaction workflows.",
+      "Delivered Python/Selenium automation tools and PyQt desktop apps to 20+ paying clients — covering scheduled data collection, web scraping, and transaction workflows.",
     bullets: [
       "Python / Selenium automation tools & PyQt desktop apps",
       "Served 20+ paying clients",
@@ -123,11 +136,11 @@ export const EVENTS: TimelineEvent[] = [
     detail:
       "Built and operated high-concurrency MMORPG game servers for Ragnarok Online Project 1.5.",
     bullets: [
-      "Redesigned broadcast cache architecture → raised single-map capacity to 600 players and validated 3,000 concurrent connections on a single machine",
-      "Zone-partitioned threading across 10 worker threads to eliminate shared-resource contention; cross-server state sync via master-server routing & P2P UDP hole punching",
-      "Decomposed the monolith into 6 microservices (Auth, Game, Guild, Log, Control, GM) for per-service scaling, fault isolation, and independent deployment",
-      "Architected 5 MySQL schemas and integrated Redis for low-latency session management and hot-data caching",
-      "Built automated fault detection, failover, and backup recovery for live-production continuity during node failures",
+      "Redesigned the broadcast cache architecture → single-map capacity 250 → 600 players, validated 3,000 concurrent connections on one machine",
+      "Zone-partitioned threading across 10 worker threads to remove shared-resource contention; cross-server state sync via master-server routing & P2P UDP hole punching",
+      "Split the monolith into 6 microservices (Auth, Game, Guild, Log, Control, GM) for fault isolation, independent deployment, and per-service scaling",
+      "Designed 5 MySQL schemas and added Redis for low-latency session management and hot-data caching on real-time paths",
+      "Built automated fault detection, failover, and backup recovery to survive node failures in production",
     ],
     links: [
       {
@@ -141,26 +154,6 @@ export const EVENTS: TimelineEvent[] = [
     id: "4",
     level: 4,
     kind: "project",
-    year: "2025",
-    date: "Oct 2025 – Dec 2025",
-    accent: "#8b7cf6",
-    title: "Blockchain Wallet",
-    role: "Decentralized Web Application",
-    logos: [{ src: "/icons/blockchain.png", alt: "Blockchain Wallet", w: 64, h: 64 }],
-    summary: ["Decentralized web app", "PoW / PoS network"],
-    detail:
-      "Built a decentralized web application on a multi-node PoW/PoS network.",
-    bullets: [
-      "Wrote and deployed the smart contracts",
-      "Integrated wallet transaction signing and on-chain state into the client",
-      "Ran on a multi-node PoW / PoS network",
-    ],
-    links: [{ label: "GitHub", url: "https://github.com/KMTsw22/BlockChainProject" }],
-  },
-  {
-    id: "5",
-    level: 5,
-    kind: "project",
     year: "2026",
     date: "Jan 2026 – Mar 2026",
     accent: "#12b886",
@@ -172,28 +165,49 @@ export const EVENTS: TimelineEvent[] = [
       "Built a self-hosted, Vercel-like deployment platform using Docker and k3s.",
     bullets: [
       "Automated build, containerization, and zero-downtime deployment pipelines",
-      "Provisioned Hetzner Cloud VMs with cloud firewall and DNS configuration",
-      "Managed infrastructure and service orchestration across multiple nodes",
+      "Provisioned Hetzner Cloud VMs across multiple nodes",
+      "Infrastructure and service orchestration",
     ],
     links: [{ label: "GitHub", url: "https://github.com/KMTsw22/DashDeploy" }],
+  },
+  {
+    id: "5",
+    level: 5,
+    kind: "project",
+    year: "2026",
+    date: "Jan 2026 – Present",
+    accent: "#8b7cf6",
+    title: "Fastlane",
+    role: "AI Evaluation Platform",
+    logos: [{ src: "/icons/fastlane.png", alt: "Fastlane", w: 64, h: 64 }],
+    summary: ["AI proposal review", "Next.js · Supabase · OpenAI"],
+    detail:
+      "Built and shipped an end-to-end AI proposal review platform (Next.js, Supabase, OpenAI), owning full-stack architecture, schema design, and LLM orchestration.",
+    bullets: [
+      "3-pass LLM scoring pipeline (Draft → Skeptic → Judge) with σ-based dispute routing",
+      "Auto-clears ~70% of proposals at the first pass, escalating only disagreed items to human review",
+      "Owned full-stack architecture, schema design, and LLM orchestration",
+    ],
+    links: [{ label: "Website", url: "https://fastlane-tem.vercel.app/" }],
+    featured: true,
   },
   {
     id: "6",
     level: 6,
     kind: "project",
     year: "2026",
-    date: "Mar 2026 – Jun 2026",
+    date: "Apr 2026 – Present",
     accent: "#f97316",
     title: "Last Ember",
     role: "Unity Card Game",
     logos: [{ src: "/icons/lastember.png", alt: "Last Ember", w: 64, h: 64 }],
-    summary: ["Roguelike card game", "Unity (C#)"],
+    summary: ["Roguelike card game", "Unity · Steam"],
     detail:
-      "Designing and building a roguelike card game in Unity from the ground up, extending a server-side background into full game-client architecture.",
+      "Building a roguelike card game in Unity from scratch — card system, turn-based combat engine, deck composition, and reward/upgrade loops. Launched on Steam.",
     bullets: [
-      "Card system and turn-based combat engine",
-      "Deck composition with reward / upgrade mechanics",
-      "Full game-client architecture built in Unity",
+      "Card system, turn-based combat engine, deck composition & reward/upgrade loops",
+      "Built in Unity from scratch",
+      "Launched on Steam — 30+ sales, 200 wishlists",
     ],
     links: [
       { label: "Steam", url: "https://store.steampowered.com/app/4729480/Last_Ember/" },
