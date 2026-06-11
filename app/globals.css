@@ -1,6 +1,36 @@
 :root {
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+
+  --page-bg: #f1ecfb;
+  --surface: #ffffff;
+  --surface-2: #f4f4f8;
+  --surface-3: #f3f0fb;
+  --text: #1a1a1a;
+  --text-2: #4a4a55;
+  --muted: #5a566e;
+  --faint: #8a85a0;
+  --border: #e5e5ef;
+  --border-2: #ececf2;
+  --line: #1f2230;
+  --chrome: rgba(248, 246, 252, 0.85);
+  --window-border: rgba(120, 90, 170, 0.25);
+}
+
+[data-theme="dark"] {
+  --page-bg: #2c2c34;
+  --surface: #3a3a44;
+  --surface-2: #44444f;
+  --surface-3: #4a4658;
+  --text: #f1f0f6;
+  --text-2: #d4d2de;
+  --muted: #b6b2c6;
+  --faint: #928ea4;
+  --border: #50505c;
+  --border-2: #474751;
+  --line: #74748a;
+  --chrome: rgba(58, 58, 68, 0.85);
+  --window-border: rgba(150, 125, 195, 0.3);
 }
 
 * {
@@ -12,8 +42,8 @@
 html,
 body {
   font-family: var(--font-sans);
-  background: #f1ecfb;
-  color: #1a1a1a;
+  background: var(--page-bg);
+  color: var(--text);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 import styles from "./MacFrame.module.css";
 
 export default function MacFrame({ children }: { children: React.ReactNode }) {
@@ -45,7 +46,9 @@ export default function MacFrame({ children }: { children: React.ReactNode }) {
             />
           </span>
           <span className={styles.title}>Mintae Kim — Portfolio</span>
-          <span className={styles.spacer} />
+          <span className={styles.barRight}>
+            <ThemeToggle />
+          </span>
         </div>
         <div className={styles.viewport}>{children}</div>
       </div>

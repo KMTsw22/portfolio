@@ -68,3 +68,30 @@
     animation: none;
   }
 }
+
+/* dim gray dark theme wallpaper */
+:global([data-theme="dark"]) .wrap {
+  background: linear-gradient(
+    180deg,
+    #2b2b33 0%,
+    #313039 42%,
+    #3a3340 62%,
+    #45384c 69.4%,
+    #2c2c34 70.2%,
+    #28282f 100%
+  );
+}
+:global([data-theme="dark"]) .sun {
+  opacity: 0.55;
+  background: linear-gradient(180deg, #b7a07e 0%, #b08a86 55%, #9c7e9e 100%);
+  box-shadow: 0 0 80px 24px rgba(150, 120, 150, 0.32);
+}
+:global([data-theme="dark"]) .horizon {
+  background: rgba(170, 145, 190, 0.55);
+  box-shadow: 0 0 16px 3px rgba(160, 130, 180, 0.4);
+}
+:global([data-theme="dark"]) .grid {
+  background-image:
+    linear-gradient(rgba(165, 140, 195, 0.24) 1.4px, transparent 1.4px),
+    linear-gradient(90deg, rgba(140, 130, 185, 0.2) 1.4px, transparent 1.4px);
+}
