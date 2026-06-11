@@ -167,9 +167,9 @@
 }
 .monogram {
   font-family: var(--font-mono);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 14px;
-  letter-spacing: 2px;
+  letter-spacing: 0.5px;
   background: linear-gradient(120deg, #7b5cff, #b06cff);
   -webkit-background-clip: text;
   background-clip: text;

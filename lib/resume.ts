@@ -34,7 +34,6 @@ export const PROFILE = {
   tagline:
     "Server Engineer with 2+ years of production experience on a live MMORPG.",
   links: [
-    { label: "GitHub", url: "https://github.com/KMTsw22" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/mintae-kim-377041386" },
     { label: "Linktree", url: "https://beacons.ai/mintae818" },
     { label: "Email", url: "mailto:mintae3827@gmail.com" },

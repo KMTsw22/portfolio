@@ -77,8 +77,6 @@ export default function Timeline() {
         </header>
 
         <div className={styles.track}>
-          <span className={styles.start}>START</span>
-
           {EVENTS.map((ev, i) => {
             const side = i % 2 === 0 ? styles.left : styles.right;
             return (
@@ -90,14 +88,7 @@ export default function Timeline() {
                 <span className={styles.ghost} aria-hidden="true">
                   {ev.year}
                 </span>
-                <Image
-                  className={styles.star}
-                  src="/icons/node.png"
-                  alt=""
-                  width={56}
-                  height={56}
-                  aria-hidden="true"
-                />
+                <span className={styles.node} aria-hidden="true" />
                 <Link
                   href={`/level/${ev.id}`}
                   className={`${styles.event} ${ev.featured ? styles.featured : ""}`}

@@ -53,7 +53,7 @@ export default function MacFrame({ children }: { children: React.ReactNode }) {
             />
           </span>
           <span className={styles.title}>
-            <span className={styles.monogram}>MK</span>
+            <span className={styles.monogram}>Max</span>
           </span>
           <span className={styles.barRight}>
             <ThemeToggle />
