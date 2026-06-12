@@ -81,7 +81,7 @@ export default function EventCard({ ev }: { ev: TimelineEvent }) {
                   src={src}
                   alt={`${ev.title} screenshot ${i + 1}`}
                   fill
-                  sizes="(max-width: 640px) 45vw, 180px"
+                  sizes="(max-width: 640px) 88vw, 180px"
                   style={{ objectFit: "cover" }}
                 />
               </span>

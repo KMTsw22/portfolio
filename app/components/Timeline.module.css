@@ -531,10 +531,10 @@
 
 @media (max-width: 640px) {
   .page {
-    padding: 12px 14px 44px;
+    padding: 12px 12px 44px 6px;
   }
   .board {
-    padding: 4px 14px 32px;
+    padding: 4px 12px 32px 4px;
   }
   .head {
     padding: 2px 0 18px;
@@ -543,7 +543,7 @@
     padding-top: 14px;
   }
   .track::before {
-    left: 28px;
+    left: 6px;
   }
   .row {
     min-height: auto;
@@ -553,18 +553,22 @@
     display: none;
   }
   .node {
-    left: 28px;
+    left: 6px;
   }
   .event,
   .left .event,
   .right .event {
-    width: calc(100% - 70px);
-    margin-left: 70px;
+    width: calc(100% - 36px);
+    margin-left: 36px;
   }
   .left .event::after,
   .right .event::after {
-    left: -42px;
+    left: -30px;
     right: auto;
-    width: 42px;
+    width: 30px;
+  }
+  /* one screenshot per row, full width — bigger on phones */
+  .gallery {
+    grid-template-columns: 1fr;
   }
 }
