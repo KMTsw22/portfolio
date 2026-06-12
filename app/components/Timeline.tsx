@@ -1,6 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
-import { EVENTS, PROFILE, SKILLS, type Logo } from "@/lib/resume";
+import { EVENTS, PROFILE, SKILLS } from "@/lib/resume";
+import EventCard from "./EventCard";
 import styles from "./Timeline.module.css";
 
 const LINK_ICONS: Record<string, React.ReactNode> = {
@@ -26,25 +25,6 @@ const LINK_ICONS: Record<string, React.ReactNode> = {
     </svg>
   ),
 };
-
-function LogoMark({ logo, className }: { logo: Logo; className: string }) {
-  if (logo.src) {
-    return (
-      <Image
-        className={className}
-        src={logo.src}
-        alt={logo.alt ?? ""}
-        width={logo.w ?? 56}
-        height={logo.h ?? 56}
-      />
-    );
-  }
-  return (
-    <span className={`${className} ${styles.emoji}`} role="img" aria-label={logo.alt}>
-      {logo.emoji}
-    </span>
-  );
-}
 
 export default function Timeline() {
   return (
@@ -73,11 +53,25 @@ export default function Timeline() {
                 {l.label}
               </a>
             ))}
+            <a
+              href="/MintaeKim_Resume.pdf"
+              className={styles.resumeBtn}
+              download
+            >
+              <span className={styles.linkIcon}>
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 3v12" />
+                  <path d="M7 11l5 5 5-5" />
+                  <path d="M5 21h14" />
+                </svg>
+              </span>
+              Resume
+            </a>
           </nav>
         </header>
 
         <div className={styles.track}>
-          {EVENTS.map((ev, i) => {
+          {[...EVENTS].reverse().map((ev, i) => {
             const side = i % 2 === 0 ? styles.left : styles.right;
             return (
               <div
@@ -89,33 +83,7 @@ export default function Timeline() {
                   {ev.year}
                 </span>
                 <span className={styles.node} aria-hidden="true" />
-                <Link
-                  href={`/level/${ev.id}`}
-                  className={`${styles.event} ${ev.featured ? styles.featured : ""}`}
-                >
-                  <span className={styles.cardBar}>
-                    <span className={styles.dots}>
-                      <i />
-                      <i />
-                      <i />
-                    </span>
-                    <span className={styles.cardTitle}>
-                      LV.{ev.level} · {ev.kind}
-                    </span>
-                    {ev.featured && <span className={styles.fstar}>★</span>}
-                  </span>
-                  <div className={styles.cardBody}>
-                    <div className={styles.logo}>
-                      {ev.logos.map((logo, j) => (
-                        <LogoMark key={j} logo={logo} className={styles.logoImg} />
-                      ))}
-                    </div>
-                    <div className={styles.date}>{ev.date}</div>
-                    <div className={styles.title}>{ev.title}</div>
-                    <div className={styles.role}>{ev.role}</div>
-                    <span className={styles.more}>VIEW DETAILS ▸</span>
-                  </div>
-                </Link>
+                <EventCard ev={ev} />
               </div>
             );
           })}

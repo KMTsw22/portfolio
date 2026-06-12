@@ -24,6 +24,8 @@ export type TimelineEvent = {
   links: LinkItem[];
   featured?: boolean;
   art?: string;
+  gallery?: string[];
+  tech?: string[];
 };
 
 export const PROFILE = {
@@ -36,7 +38,6 @@ export const PROFILE = {
   links: [
     { label: "LinkedIn", url: "https://www.linkedin.com/in/mintae-kim-377041386" },
     { label: "Linktree", url: "https://beacons.ai/mintae818" },
-    { label: "Email", url: "mailto:mintae3827@gmail.com" },
   ] as LinkItem[],
 };
 
@@ -58,6 +59,10 @@ export const SKILLS: { group: string; items: string[] }[] = [
     ],
   },
   {
+    group: "Frontend",
+    items: ["React", "Next.js", "TypeScript", "HTML / CSS", "Tailwind CSS"],
+  },
+  {
     group: "Infra & DevOps",
     items: [
       "Docker",
@@ -70,7 +75,7 @@ export const SKILLS: { group: string; items: string[] }[] = [
   },
   {
     group: "Additional",
-    items: ["Unity (C#)", "React", "Next.js", "TypeScript", "PyQt", "Selenium"],
+    items: ["Unity (C#)", "PyQt", "Selenium"],
   },
 ];
 
@@ -85,12 +90,13 @@ export const EVENTS: TimelineEvent[] = [
     title: "Kookmin University",
     role: "B.S. in Software Engineering",
     logos: [{ src: "/icons/kmu.png", alt: "Kookmin University", w: 64, h: 64 }],
-    summary: ["B.S. Software Engineering", "GPA 4.04"],
+    summary: ["B.S. Software Engineering", "GPA 4.04 / 4.5"],
+    tech: ["C/C++", "Java", "Algorithms", "Data Structures"],
     detail:
-      "Pursuing a B.S. in Software Engineering at Kookmin University, maintaining a GPA of 4.04.",
+      "Pursuing a B.S. in Software Engineering at Kookmin University, maintaining a GPA of 4.04 / 4.5.",
     bullets: [
       "B.S. in Software Engineering",
-      "GPA 4.04",
+      "GPA 4.04 / 4.5",
       "Expected graduation — Feb 2028",
     ],
     links: [],
@@ -106,6 +112,7 @@ export const EVENTS: TimelineEvent[] = [
     role: "Automation Software Engineer",
     logos: [{ src: "/icons/kmong.png", alt: "Freelance", w: 96, h: 64 }],
     summary: ["Automation Software Engineer", "20+ paying clients"],
+    tech: ["Python", "Selenium", "PyQt"],
     detail:
       "Delivered Python/Selenium automation tools and PyQt desktop apps to 20+ paying clients — covering scheduled data collection, web scraping, and transaction workflows.",
     bullets: [
@@ -117,6 +124,7 @@ export const EVENTS: TimelineEvent[] = [
       { label: "GitHub · Naver", url: "https://github.com/KMTsw22/NaverCommentManage" },
       { label: "GitHub · Shop", url: "https://github.com/KMTsw22/ShoppingMall-Manage" },
     ],
+    gallery: ["/art/freelance/1.png"],
   },
   {
     id: "3",
@@ -130,16 +138,16 @@ export const EVENTS: TimelineEvent[] = [
     logos: [
       { src: "/icons/funigloo.jpg", alt: "Funigloo", w: 64, h: 64 },
       { src: "/icons/ragnarok.png", alt: "Ragnarok Online Project 1.5", w: 108, h: 64 },
+      { src: "/icons/gravity.png", alt: "Gravity", w: 500, h: 436 },
     ],
     summary: ["Game Server Developer", "MMORPG · Ragnarok 1.5"],
+    tech: ["C#", "ProudNet", "MySQL", "Redis", "C++"],
     detail:
       "Built and operated high-concurrency MMORPG game servers for Ragnarok Online Project 1.5.",
     bullets: [
-      "Redesigned the broadcast cache architecture → single-map capacity 250 → 600 players, validated 3,000 concurrent connections on one machine",
+      "Redesigned the broadcast cache architecture → single-map capacity 250 → 600 players, validating 50,000 concurrent players in a single world",
       "Zone-partitioned threading across 10 worker threads to remove shared-resource contention; cross-server state sync via master-server routing & P2P UDP hole punching",
       "Split the monolith into 6 microservices (Auth, Game, Guild, Log, Control, GM) for fault isolation, independent deployment, and per-service scaling",
-      "Designed 5 MySQL schemas and added Redis for low-latency session management and hot-data caching on real-time paths",
-      "Built automated fault detection, failover, and backup recovery to survive node failures in production",
     ],
     links: [
       {
@@ -148,6 +156,12 @@ export const EVENTS: TimelineEvent[] = [
       },
     ],
     featured: true,
+    gallery: [
+      "/art/ragnarok/title.png",
+      "/art/ragnarok/character.png",
+      "/art/ragnarok/boss.png",
+      "/art/ragnarok/ingame.png",
+    ],
   },
   {
     id: "4",
@@ -160,6 +174,7 @@ export const EVENTS: TimelineEvent[] = [
     role: "Self-Hosted Deployment Platform",
     logos: [{ src: "/icons/dashdeploy.png", alt: "DashDeploy", w: 64, h: 64 }],
     summary: ["Self-hosted deploy platform", "Docker · k3s"],
+    tech: ["Docker", "k3s", "Hetzner Cloud", "Linux"],
     detail:
       "Built a self-hosted, Vercel-like deployment platform using Docker and k3s.",
     bullets: [
@@ -168,18 +183,20 @@ export const EVENTS: TimelineEvent[] = [
       "Infrastructure and service orchestration",
     ],
     links: [{ label: "GitHub", url: "https://github.com/KMTsw22/DashDeploy" }],
+    gallery: ["/art/dashdeploy/1.png", "/art/dashdeploy/2.png"],
   },
   {
     id: "5",
     level: 5,
     kind: "project",
     year: "2026",
-    date: "Jan 2026 – Present",
+    date: "Jan 2026 – Jun 2026",
     accent: "#8b7cf6",
     title: "Fastlane",
     role: "AI Evaluation Platform",
     logos: [{ src: "/icons/fastlane.png", alt: "Fastlane", w: 64, h: 64 }],
     summary: ["AI proposal review", "Next.js · Supabase · OpenAI"],
+    tech: ["Next.js", "TypeScript", "Supabase", "OpenAI", "LLM"],
     detail:
       "Built and shipped an end-to-end AI proposal review platform (Next.js, Supabase, OpenAI), owning full-stack architecture, schema design, and LLM orchestration.",
     bullets: [
@@ -189,23 +206,28 @@ export const EVENTS: TimelineEvent[] = [
     ],
     links: [{ label: "Website", url: "https://fastlane-tem.vercel.app/" }],
     featured: true,
+    gallery: ["/art/fastlane/1.png"],
   },
   {
     id: "6",
     level: 6,
     kind: "project",
     year: "2026",
-    date: "Apr 2026 – Present",
+    date: "Apr 2026 – Jun 2026",
     accent: "#f97316",
     title: "Last Ember",
     role: "Unity Card Game",
-    logos: [{ src: "/icons/lastember.png", alt: "Last Ember", w: 64, h: 64 }],
+    logos: [
+      { src: "/icons/lastember.png", alt: "Last Ember", w: 64, h: 64 },
+      { src: "/icons/steam.png", alt: "Steam", w: 198, h: 201 },
+    ],
     summary: ["Roguelike card game", "Unity · Steam"],
+    tech: ["Unity", "C#"],
     detail:
       "Building a roguelike card game in Unity from scratch — card system, turn-based combat engine, deck composition, and reward/upgrade loops. Launched on Steam.",
     bullets: [
       "Card system, turn-based combat engine, deck composition & reward/upgrade loops",
-      "Built in Unity from scratch",
+      "Shipped the full release pipeline — automated build deployment, save system, live patch updates",
       "Launched on Steam — 30+ sales, 200 wishlists",
     ],
     links: [
@@ -213,6 +235,12 @@ export const EVENTS: TimelineEvent[] = [
     ],
     featured: true,
     art: "/art/lastember-bg.png",
+    gallery: [
+      "/art/lastember/title.png",
+      "/art/lastember/combat.png",
+      "/art/lastember/event.png",
+      "/art/lastember/shop.png",
+    ],
   },
 ];
 

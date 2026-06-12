@@ -101,6 +101,28 @@
 .linkBtn:hover .linkIcon {
   color: #5b3fd6;
 }
+.resumeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(120deg, #6c5ce7, #8b7cf6);
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, filter 0.14s ease;
+}
+.resumeBtn .linkIcon {
+  color: #fff;
+}
+.resumeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(108, 92, 231, 0.4);
+  filter: brightness(1.05);
+}
 
 /* Vertical track */
 .track {
@@ -278,7 +300,7 @@
 
 .cardBody {
   display: block;
-  padding: 14px 18px 16px;
+  padding: 14px 18px 10px;
   text-align: left;
 }
 
@@ -296,15 +318,16 @@
 }
 
 .logo {
-  height: 64px;
+  min-height: 56px;
   margin-bottom: 8px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 14px;
+  flex-wrap: wrap;
+  gap: 10px 14px;
 }
 .logoImg {
-  height: 60px;
+  height: 52px;
   width: auto;
   object-fit: contain;
   border-radius: 12px;
@@ -330,9 +353,11 @@
   font-size: 14px;
   color: var(--text-2);
 }
+.cardFoot {
+  padding: 0 18px 16px;
+}
 .more {
   display: inline-block;
-  margin-top: 10px;
   font-family: var(--font-mono);
   font-weight: 800;
   font-size: 11px;
@@ -344,6 +369,124 @@
 .event:hover .more {
   opacity: 1;
   transform: translateX(3px);
+}
+
+/* expand → gallery → details */
+.expanded {
+  z-index: 5;
+  animation: cardPop 0.18s ease;
+}
+.event.expanded,
+.event.expanded:hover {
+  transform: none;
+  box-shadow: 0 16px 40px rgba(60, 40, 90, 0.22);
+}
+.event.featured.expanded {
+  box-shadow: 0 0 0 1.5px var(--accent), 0 16px 40px rgba(60, 40, 90, 0.24);
+}
+@keyframes cardPop {
+  from {
+    transform: scale(0.985);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 0 16px 12px;
+  animation: galFade 0.22s ease;
+}
+.gallerySingle {
+  grid-template-columns: 1fr;
+}
+@keyframes galFade {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.galleryItem {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-2);
+  background: var(--surface-2);
+}
+
+/* text preview for cards without screenshots */
+.preview {
+  padding: 0 18px 12px;
+  animation: galFade 0.22s ease;
+}
+.previewText {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.previewList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.previewList li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+.previewList li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+.techRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 18px 14px;
+  animation: galFade 0.22s ease;
+}
+.tech {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.detailBtn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: var(--accent);
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: filter 0.12s ease, transform 0.12s ease;
+}
+.detailBtn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
 }
 
 /* Skills */
