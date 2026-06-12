@@ -134,18 +134,23 @@
   color: var(--faint);
 }
 
-.banner {
-  position: relative;
-  width: calc(100% + 56px);
-  height: 150px;
-  margin: 0 -28px 14px;
-  overflow: hidden;
+/* screenshots — shown prominently above the text */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 18px 0 4px;
 }
-.banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 45%, var(--surface) 100%);
+.gallerySingle {
+  grid-template-columns: 1fr;
+}
+.galleryItem {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-2);
+  background: var(--surface-2);
 }
 
 .header {
@@ -264,6 +269,12 @@
 .navOff {
   opacity: 0.35;
   pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {

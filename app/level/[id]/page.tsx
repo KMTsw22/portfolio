@@ -36,19 +36,6 @@ export default async function LevelPage({
           <span className={styles.year}>{ev.year}</span>
         </div>
 
-        {ev.art && (
-          <div className={styles.banner}>
-            <Image
-              src={ev.art}
-              alt={`${ev.title} key art`}
-              fill
-              sizes="(max-width: 640px) 100vw, 580px"
-              style={{ objectFit: "cover" }}
-              priority
-            />
-          </div>
-        )}
-
         <header className={styles.header}>
           <div className={styles.logos}>
             {ev.logos.map((logo, j) =>
@@ -72,6 +59,26 @@ export default async function LevelPage({
           <p className={styles.role}>{ev.role}</p>
           <p className={styles.date}>{ev.date}</p>
         </header>
+
+        {ev.gallery && ev.gallery.length > 0 && (
+          <div
+            className={`${styles.gallery} ${
+              ev.gallery.length === 1 ? styles.gallerySingle : ""
+            }`}
+          >
+            {ev.gallery.map((src, i) => (
+              <span key={i} className={styles.galleryItem}>
+                <Image
+                  src={src}
+                  alt={`${ev.title} screenshot ${i + 1}`}
+                  fill
+                  sizes="(max-width: 640px) 90vw, 280px"
+                  style={{ objectFit: "cover" }}
+                />
+              </span>
+            ))}
+          </div>
+        )}
 
         <p className={styles.detail}>{ev.detail}</p>
 
