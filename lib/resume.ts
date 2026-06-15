@@ -34,7 +34,7 @@ export const PROFILE = {
   email: "mintae3827@gmail.com",
   phone: "949-735-4720",
   tagline:
-    "Server Engineer with 2+ years of production experience on a live MMORPG.",
+    "Server Engineer with 5+ years coding and 2+ years of production experience on a live MMORPG.",
   links: [
     { label: "LinkedIn", url: "https://www.linkedin.com/in/mintae-kim-377041386" },
     { label: "Linktree", url: "https://beacons.ai/mintae818" },
@@ -61,6 +61,18 @@ export const SKILLS: { group: string; items: string[] }[] = [
   {
     group: "Frontend",
     items: ["React", "Next.js", "TypeScript", "HTML / CSS", "Tailwind CSS"],
+  },
+  {
+    group: "AI & LLM",
+    items: [
+      "Claude Code",
+      "Codex",
+      "Gemini",
+      "OpenAI API",
+      "Multi-agent systems",
+      "AI automation",
+      "Prompt engineering",
+    ],
   },
   {
     group: "Infra & DevOps",
@@ -224,11 +236,11 @@ export const EVENTS: TimelineEvent[] = [
     summary: ["Roguelike card game", "Unity · Steam"],
     tech: ["Unity", "C#"],
     detail:
-      "Building a roguelike card game in Unity from scratch — card system, turn-based combat engine, deck composition, and reward/upgrade loops. Launched on Steam.",
+      "Building a roguelike card game in Unity from scratch in about 3 weeks, using AI-assisted development (Claude Code) to build the card system, turn-based combat engine, deck composition, and reward/upgrade loops. Launched on Steam.",
     bullets: [
-      "Card system, turn-based combat engine, deck composition & reward/upgrade loops",
+      "Card system, turn-based combat engine, deck composition & reward/upgrade loops — built from scratch in ~3 weeks with AI-assisted development (Claude Code)",
       "Shipped the full release pipeline — automated build deployment, save system, live patch updates",
-      "Launched on Steam — 30+ sales, 200 wishlists",
+      "Launched on Steam — 40+ sales, 210 wishlists",
     ],
     links: [
       { label: "Steam", url: "https://store.steampowered.com/app/4729480/Last_Ember/" },
