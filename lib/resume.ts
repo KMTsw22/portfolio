@@ -34,7 +34,7 @@ export const PROFILE = {
   email: "mintae3827@gmail.com",
   phone: "949-735-4720",
   tagline:
-    "Server Engineer with 5+ years coding and 2+ years of production experience on a live MMORPG.",
+    "Software engineer with 5+ years coding, building LLM-powered agent systems and high-concurrency production servers.",
   links: [
     { label: "LinkedIn", url: "https://www.linkedin.com/in/mintae-kim-377041386" },
     { label: "Linktree", url: "https://beacons.ai/mintae818" },
@@ -66,12 +66,12 @@ export const SKILLS: { group: string; items: string[] }[] = [
     group: "AI & LLM",
     items: [
       "Claude Code",
-      "Codex",
-      "Gemini",
+      "MCP",
       "OpenAI API",
-      "Multi-agent systems",
-      "AI automation",
-      "Prompt engineering",
+      "PyTorch",
+      "Hugging Face Transformers",
+      "Unsloth",
+      "QLoRA / LoRA",
     ],
   },
   {
@@ -126,11 +126,11 @@ export const EVENTS: TimelineEvent[] = [
     summary: ["Automation Software Engineer", "20+ paying clients"],
     tech: ["Python", "Selenium", "PyQt"],
     detail:
-      "Delivered Python/Selenium automation tools and PyQt desktop apps to 20+ paying clients — covering scheduled data collection, web scraping, and transaction workflows.",
+      "Delivered Python/Selenium automation tools and PyQt desktop apps to 20+ paying clients — covering data collection, web scraping, and transaction workflows.",
     bullets: [
       "Python / Selenium automation tools & PyQt desktop apps",
       "Served 20+ paying clients",
-      "Scheduled data collection, web scraping, transaction workflows",
+      "Data collection, web scraping, transaction workflows",
     ],
     links: [
       { label: "GitHub · Naver", url: "https://github.com/KMTsw22/NaverCommentManage" },
@@ -157,9 +157,9 @@ export const EVENTS: TimelineEvent[] = [
     detail:
       "Built and operated high-concurrency MMORPG game servers for Ragnarok Online Project 1.5.",
     bullets: [
-      "Redesigned the broadcast cache architecture → single-map capacity 250 → 600 players, validating 50,000 concurrent players in a single world",
-      "Zone-partitioned threading across 10 worker threads to remove shared-resource contention; cross-server state sync via master-server routing & P2P UDP hole punching",
-      "Split the monolith into 6 microservices (Auth, Game, Guild, Log, Control, GM) for fault isolation, independent deployment, and per-service scaling",
+      "Redesigned the broadcast cache architecture → single-map capacity 250 → 600 players, load-tested 50,000 concurrent connections via parallel bot clients",
+      "Zone-partitioned threading across 10 worker threads to remove resource contention; cross-server sync via master-server routing & P2P UDP hole punching",
+      "Split the monolith into 6 microservices (Auth, Game, Guild, Log, Control, GM) for fault isolation and independent scaling",
     ],
     links: [
       {
@@ -180,28 +180,6 @@ export const EVENTS: TimelineEvent[] = [
     level: 4,
     kind: "project",
     year: "2026",
-    date: "Jan 2026 – Mar 2026",
-    accent: "#12b886",
-    title: "DashDeploy",
-    role: "Self-Hosted Deployment Platform",
-    logos: [{ src: "/icons/dashdeploy.png", alt: "DashDeploy", w: 64, h: 64 }],
-    summary: ["Self-hosted deploy platform", "Docker · k3s"],
-    tech: ["Docker", "k3s", "Hetzner Cloud", "Linux"],
-    detail:
-      "Built a self-hosted, Vercel-like deployment platform using Docker and k3s.",
-    bullets: [
-      "Automated build, containerization, and zero-downtime deployment pipelines",
-      "Provisioned Hetzner Cloud VMs across multiple nodes",
-      "Infrastructure and service orchestration",
-    ],
-    links: [{ label: "GitHub", url: "https://github.com/KMTsw22/DashDeploy" }],
-    gallery: ["/art/dashdeploy/1.png", "/art/dashdeploy/2.png"],
-  },
-  {
-    id: "5",
-    level: 5,
-    kind: "project",
-    year: "2026",
     date: "Jan 2026 – Jun 2026",
     accent: "#8b7cf6",
     title: "Fastlane",
@@ -210,19 +188,19 @@ export const EVENTS: TimelineEvent[] = [
     summary: ["AI proposal review", "Next.js · Supabase · OpenAI"],
     tech: ["Next.js", "TypeScript", "Supabase", "OpenAI", "LLM"],
     detail:
-      "Built and shipped an end-to-end AI proposal review platform (Next.js, Supabase, OpenAI), owning full-stack architecture, schema design, and LLM orchestration.",
+      "Built and shipped an end-to-end AI proposal review platform (Next.js, Supabase, OpenAI), covering architecture, schema, and LLM orchestration.",
     bullets: [
       "3-pass LLM scoring pipeline (Draft → Skeptic → Judge) with σ-based dispute routing",
       "Auto-clears ~70% of proposals at the first pass, escalating only disagreed items to human review",
-      "Owned full-stack architecture, schema design, and LLM orchestration",
+      "Rule-based quality gate (zero LLM cost) before scoring to filter low-quality submissions and cut OpenAI calls",
     ],
     links: [{ label: "Website", url: "https://fastlane-tem.vercel.app/" }],
     featured: true,
     gallery: ["/art/fastlane/1.png"],
   },
   {
-    id: "6",
-    level: 6,
+    id: "5",
+    level: 5,
     kind: "project",
     year: "2026",
     date: "Apr 2026 – Jun 2026",
@@ -233,25 +211,48 @@ export const EVENTS: TimelineEvent[] = [
       { src: "/icons/lastember.png", alt: "Last Ember", w: 64, h: 64 },
       { src: "/icons/steam.png", alt: "Steam", w: 198, h: 201 },
     ],
-    summary: ["Roguelike card game", "Unity · Steam"],
-    tech: ["Unity", "C#"],
+    summary: ["Roguelike card game", "Unity · AI pipeline"],
+    tech: ["Unity", "C#", "Claude Code", "AI Agents"],
     detail:
-      "Building a roguelike card game in Unity from scratch in about 3 weeks, using AI-assisted development (Claude Code) to build the card system, turn-based combat engine, deck composition, and reward/upgrade loops. Launched on Steam.",
+      "Shipped a roguelike card game in Unity to Steam, built from scratch with AI-assisted development (Claude Code).",
     bullets: [
-      "Card system, turn-based combat engine, deck composition & reward/upgrade loops — built from scratch in ~3 weeks with AI-assisted development (Claude Code)",
-      "Shipped the full release pipeline — automated build deployment, save system, live patch updates",
-      "Launched on Steam — 40+ sales, 210 wishlists",
+      "Card system, turn-based combat, deck-building, and reward loops",
+      "AI Agent asset pipeline orchestrating GPT Image 2 & Nano Banana across agents (prompt authoring, generation, QA, post-processing) → 2,000+ game assets",
+      "Automated cinematic trailer generation via a Higgsfield + Claude MCP integration",
     ],
     links: [
       { label: "Steam", url: "https://store.steampowered.com/app/4729480/Last_Ember/" },
     ],
     featured: true,
-    art: "/art/lastember-bg.png",
     gallery: [
       "/art/lastember/title.png",
       "/art/lastember/combat.png",
       "/art/lastember/event.png",
       "/art/lastember/shop.png",
+    ],
+  },
+  {
+    id: "6",
+    level: 6,
+    kind: "project",
+    year: "2026",
+    date: "May 2026",
+    accent: "#0d9488",
+    title: "Ruming",
+    role: "On-Device Persona LLM",
+    logos: [{ emoji: "🤖", alt: "Ruming" }],
+    summary: ["On-device persona LLM", "Qwen2.5 · QLoRA"],
+    tech: ["Qwen2.5-3B", "QLoRA", "Unsloth", "GGUF", "Android"],
+    detail:
+      "Fine-tuned Qwen2.5-3B into a persona LLM and shipped it on-device for offline Android.",
+    bullets: [
+      "Fine-tuned Qwen2.5-3B with QLoRA (Unsloth) on 1,000 hand-curated dialogue pairs (15-year-friend persona)",
+      "Diagnosed distribution collapse on raw chat data → switched to synthetic data",
+      "Shipped as GGUF Q4_K_M (~2 GB) for offline on-device Android",
+    ],
+    links: [
+      { label: "GitHub", url: "https://github.com/KMTsw22/RumingLLM" },
+      { label: "Hugging Face", url: "https://huggingface.co/mintae818/ruming-qwen2.5-3b-q4km" },
     ],
   },
 ];
