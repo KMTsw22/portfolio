@@ -124,6 +124,45 @@
   filter: brightness(1.05);
 }
 
+/* Mr. Minty interview-prep entry button */
+.interviewRow {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+.interviewBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #14a37a;
+  background: color-mix(in srgb, #14a37a 13%, var(--surface));
+  border: 1px solid color-mix(in srgb, #14a37a 40%, transparent);
+  padding: 8px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
+}
+.interviewBtn:hover {
+  transform: translateY(-2px);
+  background: color-mix(in srgb, #14a37a 22%, var(--surface));
+  box-shadow: 0 8px 18px rgba(20, 163, 122, 0.28);
+}
+.mintDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #14a37a;
+  box-shadow: 0 0 0 3px color-mix(in srgb, #14a37a 25%, transparent);
+}
+.interviewArrow {
+  transition: transform 0.14s ease;
+}
+.interviewBtn:hover .interviewArrow {
+  transform: translateX(3px);
+}
+
 /* Vertical track */
 .track {
   position: relative;

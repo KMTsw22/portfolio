@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { EVENTS, PROFILE, SKILLS } from "@/lib/resume";
 import EventCard from "./EventCard";
 import styles from "./Timeline.module.css";
@@ -68,6 +69,13 @@ export default function Timeline() {
               Resume
             </a>
           </nav>
+          <div className={styles.interviewRow}>
+            <Link href="/mr-minty" className={styles.interviewBtn}>
+              <span className={styles.mintDot} />
+              Mr. Minty — Interview Prep
+              <span className={styles.interviewArrow}>→</span>
+            </Link>
+          </div>
         </header>
 
         <div className={styles.track}>

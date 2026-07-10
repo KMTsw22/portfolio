@@ -229,7 +229,7 @@ export const EVENTS: TimelineEvent[] = [
     links: [
       { label: "Steam", url: "https://store.steampowered.com/app/4729480/Last_Ember/" },
     ],
-    demo: { label: "▸ AI asset comparison (GPT Image 2 vs Nano Banana)", url: "/compare" },
+    demo: { label: "▸ Mr. Minty — AI asset showcase & animation", url: "/mr-minty" },
     featured: true,
     gallery: [
       "/art/lastember/title.png",
