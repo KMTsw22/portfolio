@@ -68,7 +68,7 @@ export default function Timeline() {
               </span>
               Resume
             </a>
-            <Link href="/mr-minty" className={styles.minty}>
+            <Link href="/showcase" className={styles.minty}>
               <span className={styles.mintDot} />
               Showcase
             </Link>

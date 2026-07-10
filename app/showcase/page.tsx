@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import styles from "./MrMinty.module.css";
+import styles from "./Showcase.module.css";
 
 export const metadata: Metadata = {
-  title: "Mr. Minty — Interview Prep · Mintae Kim",
+  title: "AI Asset Showcase — Mintae Kim",
 };
 
 const ASSETS = [
@@ -14,7 +14,7 @@ const ASSETS = [
   { src: "/art/compare/leaves-gemini.png", label: "Nano Banana", subject: "Leaves" },
 ];
 
-export default function MrMintyPage() {
+export default function ShowcasePage() {
   return (
     <main className={styles.page}>
       <div className={styles.wrap}>
@@ -23,12 +23,12 @@ export default function MrMintyPage() {
         </Link>
 
         <header className={styles.head}>
-          <p className={styles.eyebrow}>Interview Prep</p>
-          <h1 className={styles.title}>Mr. Minty</h1>
+          <p className={styles.eyebrow}>AI Content Pipeline</p>
+          <h1 className={styles.title}>AI Asset Showcase</h1>
           <p className={styles.sub}>
-            A quick concept set — mascot &amp; creature art plus an animated
-            clip — built with the same AI content pipeline behind Last Ember
-            (Claude Code skills + MCP, GPT Image 2 &amp; Nano Banana).
+            A quick concept set — mascot &amp; foliage art plus an animated clip
+            — built with the same AI content pipeline behind Last Ember (Claude
+            Code skills + MCP, GPT Image 2 &amp; Nano Banana).
           </p>
         </header>
 
@@ -36,7 +36,7 @@ export default function MrMintyPage() {
           <div className={styles.videoFrame}>
             <video
               className={styles.video}
-              src="/art/compare/mr-minty.mp4"
+              src="/art/compare/showcase.mp4"
               poster="/art/compare/man-gpt.png"
               controls
               autoPlay

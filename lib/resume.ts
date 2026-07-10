@@ -229,7 +229,7 @@ export const EVENTS: TimelineEvent[] = [
     links: [
       { label: "Steam", url: "https://store.steampowered.com/app/4729480/Last_Ember/" },
     ],
-    demo: { label: "▸ Mr. Minty — AI asset showcase & animation", url: "/mr-minty" },
+    demo: { label: "▸ AI asset showcase & animation", url: "/showcase" },
     featured: true,
     gallery: [
       "/art/lastember/title.png",
