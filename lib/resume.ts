@@ -26,6 +26,7 @@ export type TimelineEvent = {
   art?: string;
   gallery?: string[];
   tech?: string[];
+  demo?: LinkItem;
 };
 
 export const PROFILE = {
@@ -228,6 +229,7 @@ export const EVENTS: TimelineEvent[] = [
     links: [
       { label: "Steam", url: "https://store.steampowered.com/app/4729480/Last_Ember/" },
     ],
+    demo: { label: "▸ AI asset comparison (GPT Image 2 vs Nano Banana)", url: "/compare" },
     featured: true,
     gallery: [
       "/art/lastember/title.png",

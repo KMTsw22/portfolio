@@ -1,0 +1,135 @@
+.page {
+  display: flex;
+  justify-content: center;
+  padding: 40px 22px 64px;
+}
+.wrap {
+  width: 100%;
+  max-width: 860px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.back:hover {
+  color: var(--text);
+}
+.backArrow {
+  transition: transform 0.18s ease;
+}
+.back:hover .backArrow {
+  transform: translateX(-3px);
+}
+
+.head {
+  margin-top: 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border-2);
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.title {
+  margin-top: 8px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.sub {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 56ch;
+}
+
+.compare {
+  margin-top: 24px;
+}
+.modelRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 10px 0;
+  background: var(--surface);
+}
+.model {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.gpt {
+  color: #10a37f;
+  background: color-mix(in srgb, #10a37f 10%, var(--surface));
+  border-color: color-mix(in srgb, #10a37f 30%, transparent);
+}
+.gem {
+  color: #4285f4;
+  background: color-mix(in srgb, #4285f4 10%, var(--surface));
+  border-color: color-mix(in srgb, #4285f4 30%, transparent);
+}
+
+.rowGroup {
+  margin-top: 8px;
+}
+.subject {
+  margin: 14px 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-2);
+}
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.cell {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: repeating-conic-gradient(
+      var(--surface-2) 0% 25%,
+      var(--surface) 0% 50%
+    )
+    0 0 / 22px 22px;
+}
+.cell :global(img) {
+  padding: 8px;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 24px;
+  }
+  .model {
+    font-size: 11.5px;
+    padding: 7px 6px;
+  }
+  .modelRow,
+  .pair {
+    gap: 8px;
+  }
+}

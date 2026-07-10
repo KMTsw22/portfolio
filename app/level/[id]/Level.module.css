@@ -244,6 +244,25 @@
   filter: brightness(1.08);
 }
 
+.demoLink {
+  display: block;
+  margin: -8px 0 22px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 10px 14px;
+  border: 1px dashed color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+  transition: background 0.14s ease, transform 0.14s ease;
+}
+.demoLink:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
+}
+
 .nav {
   display: flex;
   justify-content: space-between;

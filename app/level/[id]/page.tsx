@@ -109,6 +109,12 @@ export default async function LevelPage({
           </div>
         )}
 
+        {ev.demo && (
+          <Link href={ev.demo.url} className={styles.demoLink}>
+            {ev.demo.label}
+          </Link>
+        )}
+
         <nav className={styles.nav}>
           {prev ? (
             <Link href={`/level/${prev.id}`} className={styles.navBtn}>
