@@ -37,24 +37,26 @@ export default async function LevelPage({
         </div>
 
         <header className={styles.header}>
-          <div className={styles.logos}>
-            {ev.logos.map((logo, j) =>
-              logo.src ? (
-                <Image
-                  key={j}
-                  className={styles.logo}
-                  src={logo.src}
-                  alt={logo.alt ?? ""}
-                  width={logo.w ?? 80}
-                  height={logo.h ?? 80}
-                />
-              ) : (
-                <span key={j} className={styles.logoEmoji} role="img" aria-label={logo.alt}>
-                  {logo.emoji}
-                </span>
-              )
-            )}
-          </div>
+          {ev.logos.length > 0 && (
+            <div className={styles.logos}>
+              {ev.logos.map((logo, j) =>
+                logo.src ? (
+                  <Image
+                    key={j}
+                    className={styles.logo}
+                    src={logo.src}
+                    alt={logo.alt ?? ""}
+                    width={logo.w ?? 80}
+                    height={logo.h ?? 80}
+                  />
+                ) : (
+                  <span key={j} className={styles.logoEmoji} role="img" aria-label={logo.alt}>
+                    {logo.emoji}
+                  </span>
+                )
+              )}
+            </div>
+          )}
           <h1 className={styles.title}>{ev.title}</h1>
           <p className={styles.role}>{ev.role}</p>
           <p className={styles.date}>{ev.date}</p>

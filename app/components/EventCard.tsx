@@ -58,11 +58,13 @@ export default function EventCard({ ev }: { ev: TimelineEvent }) {
       </span>
 
       <div className={styles.cardBody}>
-        <div className={styles.logo}>
-          {ev.logos.map((logo, j) => (
-            <LogoMark key={j} logo={logo} />
-          ))}
-        </div>
+        {ev.logos.length > 0 && (
+          <div className={styles.logo}>
+            {ev.logos.map((logo, j) => (
+              <LogoMark key={j} logo={logo} />
+            ))}
+          </div>
+        )}
         <div className={styles.date}>{ev.date}</div>
         <div className={styles.title}>{ev.title}</div>
         <div className={styles.role}>{ev.role}</div>
