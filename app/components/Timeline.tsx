@@ -70,7 +70,7 @@ export default function Timeline() {
             </a>
             <Link href="/mr-minty" className={styles.minty}>
               <span className={styles.mintDot} />
-              Mr. Minty
+              Showcase
             </Link>
           </nav>
         </header>

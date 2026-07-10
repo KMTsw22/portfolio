@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 const ASSETS = [
   { src: "/art/compare/man-gpt.png", label: "GPT Image 2", subject: "Mascot" },
   { src: "/art/compare/man-gemini.png", label: "Nano Banana", subject: "Mascot" },
-  { src: "/art/compare/octopus-gpt.png", label: "GPT Image 2", subject: "Creature" },
-  { src: "/art/compare/octopus-gemini.png", label: "Nano Banana", subject: "Creature" },
+  { src: "/art/compare/leaves-gpt.png", label: "GPT Image 2", subject: "Leaves" },
+  { src: "/art/compare/leaves-gemini.png", label: "Nano Banana", subject: "Leaves" },
 ];
 
 export default function MrMintyPage() {
