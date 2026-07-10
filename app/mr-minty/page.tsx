@@ -33,16 +33,18 @@ export default function MrMintyPage() {
         </header>
 
         <section className={styles.videoWrap}>
-          <video
-            className={styles.video}
-            src="/art/compare/mr-minty.mp4"
-            poster="/art/compare/man-gpt.png"
-            controls
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
+          <div className={styles.videoFrame}>
+            <video
+              className={styles.video}
+              src="/art/compare/mr-minty.mp4"
+              poster="/art/compare/man-gpt.png"
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          </div>
           <p className={styles.videoCap}>Animated mascot — generated clip</p>
         </section>
 

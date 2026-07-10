@@ -68,14 +68,11 @@ export default function Timeline() {
               </span>
               Resume
             </a>
-          </nav>
-          <div className={styles.interviewRow}>
-            <Link href="/mr-minty" className={styles.interviewBtn}>
+            <Link href="/mr-minty" className={styles.minty}>
               <span className={styles.mintDot} />
-              Mr. Minty — Interview Prep
-              <span className={styles.interviewArrow}>→</span>
+              Mr. Minty
             </Link>
-          </div>
+          </nav>
         </header>
 
         <div className={styles.track}>
